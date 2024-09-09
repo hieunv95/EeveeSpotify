@@ -56,5 +56,5 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: ${{env.filename}}
-        path: packages/${{env.filename}}
+        path: ${{env.filename}}
         if-no-files-found: error
