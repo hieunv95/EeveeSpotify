@@ -1,4 +1,4 @@
-name: Build Swift
+name: Build TrollFolls injection
 
 on: workflow_dispatch
 
@@ -35,6 +35,6 @@ jobs:
 
     - name: Build EeveeSpotify (rootless)
       run: |
-        make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+        make package THEOS_PACKAGE_SCHEME=rootless
         echo "filename=$(find . -name '*arm64*' -path './packages/*' | cut -d/ -f3)" >> $GITHUB_ENV
         ls -la ./packages/
