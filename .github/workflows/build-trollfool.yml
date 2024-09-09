@@ -42,12 +42,13 @@ jobs:
         ls -la $THEOS/lib/iphone/rootless
         mkdir trollfools
         mkdir com.eevee.spotify && cd "$_"
-        cp "./packages/$filename" .
-        ar -x "$filename"
+        cp "./packages/${{ env.filename }}" .
+        ar -x "${{ env.filename }}"
         tar -xvf data.tar.lzma
         cd ..
         find com.eevee.spotify/ \( -name "*.bundle" -o -name "*.framework" -o -name "*.dylib" \) | xargs -I {} cp -r {} ./trollfools/
         cp -r var/jb/Library/Frameworks/SwiftProtobuf.framework trollfools
+        cp -r var/jb/Library/Frameworks/Orion.framework trollfools
         cd trollfools
-        zip -r "../$filename.zip" *
+        zip -r "../${{ env.filename }}.zip" *
         ls -la ../
