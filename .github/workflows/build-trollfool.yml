@@ -48,7 +48,7 @@ jobs:
         cd ..
         find com.eevee.spotify/ \( -name "*.bundle" -o -name "*.framework" -o -name "*.dylib" \) | xargs -I {} cp -r {} ./trollfools/
         cp -r var/jb/Library/Frameworks/SwiftProtobuf.framework trollfools
-        cp -r var/jb/Library/Frameworks/Orion.framework trollfools
+        cp -r $THEOS/lib/iphone/rootless/Orion.framework trollfools
         cd trollfools
         zip -r "../${{ env.filename }}.zip" *
         ls -la ../
