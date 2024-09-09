@@ -53,3 +53,8 @@ jobs:
         zip -r "../${DEB_FILENAME}.zip" *
         ls -la ../
         echo "filename=${DEB_FILENAME}.zip" >> $GITHUB_ENV
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{env.filename}}
+        path: packages/${{env.filename}}
+        if-no-files-found: error
