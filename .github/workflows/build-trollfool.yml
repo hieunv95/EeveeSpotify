@@ -35,6 +35,7 @@ jobs:
 
     - name: Build EeveeSpotify (rootless)
       run: |
-        make package FINALPACKAGE=1 STRIP=0 THEOS_PACKAGE_SCHEME=rootless
+        make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
         echo "filename=$(find . -name '*arm64*' -path './packages/*' | cut -d/ -f3)" >> $GITHUB_ENV
         ls -la ./packages/
+        ls -la $THEOS/lib/iphone/rootless
