@@ -42,7 +42,7 @@ jobs:
         ls -la $THEOS/lib/iphone/rootless
         mkdir trollfools
         mkdir com.eevee.spotify && cd "$_"
-        cp "./packages/${DEB_FILENAME}" .
+        cp "../packages/${DEB_FILENAME}" .
         ar -x "${DEB_FILENAME}"
         tar -xvf data.tar.lzma
         cd ..
